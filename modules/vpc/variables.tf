@@ -1,3 +1,25 @@
+variable "access_key" {
+    description = "AWS Access Key"
+    type        = string
+} 
+
+variable "secret_key" {
+    description = "AWS Secret Key"
+    type        = string
+}
+
+variable "region" {
+    description = "AWS Region"
+    type        = string
+    default     = "us-east-1"
+}
+
+variable "endpoint_url" {
+  description = "The endpoint URL for LocalStack"
+  type        = string
+  default     = "http://localhost:4566"
+}
+
 variable "cidr_block" {
     description = "CIDR block for the VPC"
     type        = string
@@ -21,3 +43,4 @@ variable "az_1a" {
     type        = string
     default     = ""
 }
+

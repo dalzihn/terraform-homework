@@ -7,6 +7,22 @@ terraform {
   }
 }
 
+provider "aws" {
+  region                      = var.region
+  access_key                  = var.access_key
+  secret_key                  = var.secret_key
+
+  # Skip validation due to Ministack 
+  skip_credentials_validation = true
+  skip_metadata_api_check     = true
+  skip_requesting_account_id  = true
+
+  endpoints {
+    ec2 = var.endpoint_url
+  }
+
+}
+
 #  VPC 
 resource "aws_vpc" "vpc" {
   cidr_block = var.cidr_block
